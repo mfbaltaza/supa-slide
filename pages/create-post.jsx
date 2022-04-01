@@ -12,6 +12,9 @@ const initialState = { title: '', content: '' }
 function CreatePost() {
   const [post, setPost] = useState(initialState);
   const { title, content} = post;
+  const [mdeOptions, setMdeOptions] = useState({
+    spellChecker: false
+  })
 
   const router = useRouter()
   // This function below handles the input data
@@ -44,9 +47,7 @@ function CreatePost() {
         className="border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-500 space-y-2"
         type="text" />
         <SimpleMDE 
-          options={{
-            spellChecker: false
-          }}
+          options={mdeOptions}
           value={post.content}
           onChange={value => setPost({ ...post, content: value })}
           />
