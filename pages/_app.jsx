@@ -24,15 +24,17 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      <nav className="p-6 border-b border-gray-300">
-        <Link href="/" passHref>
-          <span className="mr-6 cursor-pointer">Home</span>
-        </Link>
-        {user && (
-          <Link href="/create-post" passHref>
-            <span className="mr-6 cursor-pointer">Create Post</span>
+      <nav className="flex justify-between p-6 border-b border-gray-300">
+        <div>
+          <Link href="/" passHref>
+            <span className="mr-6 cursor-pointer">Home</span>
           </Link>
-        )}
+          {user && (
+            <Link href="/create-post" passHref>
+              <span className="mr-6 cursor-pointer">Create Post</span>
+            </Link>
+          )}
+        </div>
         <Link href="/profile" passHref>
           <span className="mr-6 cursor-pointer">Profile</span>
         </Link>
