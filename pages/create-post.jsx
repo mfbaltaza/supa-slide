@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { v4 } from "uuid";
+import { v4 as uuid } from "uuid";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import "easymde/dist/easymde.min.css";
@@ -28,10 +28,10 @@ function CreatePost() {
     const { data } = await supabase
       .from('posts')
       .insert([
-        { title, content, user_id: user.id, user_email: user.email }
+          { title, content, user_id: user.id, user_email: user.email }
       ])
       .single()
-      router.push(`/posts/${data.id}`)
+    router.push(`/posts/${data.id}`)
   }
   return (
     <div>
@@ -41,7 +41,7 @@ function CreatePost() {
         name="title"
         placeholder="Title"
         value={post.title}
-        className="border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-50 space-y-2"
+        className="border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-500 space-y-2"
         type="text" />
         <SimpleMDE 
           value={post.content}

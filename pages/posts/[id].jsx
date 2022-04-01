@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
-import { supabase } from '../../api' \
+import { supabase } from '../../api'
 
 export default function Post({ post }) {
   const router = useRouter()
@@ -13,7 +13,7 @@ export default function Post({ post }) {
       <h1 className="text-5xl mt-4 font-semibold tracking-wide">{ post.title }</h1>
       <p className="text-sm font-light my-4">by {post.user_email}</p>
       <div className="mt-8">
-        <ReactMarkdown className='prose' children={post.content} />
+        <ReactMarkdown className='prose'>{ post.content }</ReactMarkdown>
       </div>
     </div>
   )
