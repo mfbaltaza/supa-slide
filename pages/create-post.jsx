@@ -45,7 +45,6 @@ function CreatePost() {
         type="text" />
         <SimpleMDE 
           options={{
-            autofocus: true,
             spellChecker: false
           }}
           value={post.content}
