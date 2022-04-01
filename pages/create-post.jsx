@@ -44,6 +44,10 @@ function CreatePost() {
         className="border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-500 space-y-2"
         type="text" />
         <SimpleMDE 
+          options={{
+            autofocus: true,
+            spellChecker: false
+          }}
           value={post.content}
           onChange={value => setPost({ ...post, content: value })}
           />
